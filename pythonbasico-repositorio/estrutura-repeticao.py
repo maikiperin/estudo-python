@@ -322,6 +322,7 @@ print('A media entre os numeros digitados e', media)
 '''
 
 #25
+'''
 contador = 0
 soma = 0
 media = 0
@@ -341,4 +342,348 @@ elif media >= 26 and media <= 60:
     print('A turma e adulta')
 else:
     print('A turma e idosa')
+'''
 
+#26
+'''
+contador = 0
+cand1 = 0
+cand2 = 0
+cand3 = 0
+
+eleitores = int(input('Informe o numero de eleitores: '))
+
+while contador < eleitores:
+    contador += 1
+    voto = int(input('Favor votar no candidato 1 ou 2 ou 3: '))
+    if voto == 1:
+        cand1 += 1
+    elif voto == 2:
+        cand2 += 1
+    else:
+        cand3 += 1
+
+print('O numero de votos para o candidato 1 e', cand1)
+print('O numero de votos para o candidato 2 e', cand2)
+print('O numero de votos para o candidato 3 e', cand3)
+'''
+
+#27
+'''
+contador = 0
+soma = 0
+
+turmas = int(input('Informe o numero de turmars: '))
+
+while contador < turmas:
+    contador += 1
+    alunos = int(input('Informe quantidade de alunos para a turma ' + str(contador) + ' : '))
+    soma += alunos
+
+print('A media de alunos por turma e', soma / turmas)
+'''
+
+#28
+'''
+contador = 0
+soma = 0
+
+cds = int(input('Informe a quantidade de CDs: '))
+
+while contador < cds:
+    contador += 1
+    valor = float(input('Informe o valor pago no CD ' + str(contador) + ' : '))
+    soma += valor
+
+print('O valor investido e', soma)
+print('O valor medio por CD e', soma / cds)
+'''
+
+#29
+'''
+contador = 0
+preco = 1.99
+
+while contador < 50:
+    contador += 1
+    print(str(contador) + ' - R$ {:.2f}'.format(contador * preco))
+'''
+
+#30
+'''
+contador = 0
+preco = float(input('Informe o valor do pao : '))
+
+while contador < 50:
+    contador += 1
+    print(str(contador) + ' - R$ {:.2f}'.format(contador * preco))
+'''
+
+#31
+'''
+total = 0
+contador = 0
+lista = []
+
+while True:
+    contador += 1
+    valor = float(input('Informe o valor do produto ' + str(contador) + ': '))
+    total += valor
+    if valor == 0:
+        break
+    else:
+        lista.append('Produto ' + str(contador) + ': R$ {:.2f}'.format(valor))
+
+print('Lojas Tabajara')
+for produto in lista:
+    print(produto)
+print('Total: R$ {:.2f}'.format(total))
+dinheiro = float(input('Informe o valor em dinheiro: '))
+troco = dinheiro - total
+print('Dinheiro: R$ {:.2f}'.format(dinheiro))
+print('Troco: R${:.2f}'.format(troco))
+'''
+
+#32
+'''
+fat = 1
+i = 2
+lista = []
+calculo = ''
+tamanho = 0
+contador = 0
+
+numero = int(input('Informe o numero que deseja calcular seu fatorial: '))
+
+lista.append(fat)
+
+while i <= numero:
+    lista.append(i)
+    fat *= i
+    i += 1
+
+tamanho = len(lista)
+lista.sort(reverse=True)
+
+for aux in lista:
+    contador += 1
+    if contador != tamanho:
+        calculo += str(aux) + ' . '
+    else:
+        calculo += str(aux)
+
+print('O fatorial de: ' + str(numero))
+print(str(numero) + '! = ' + calculo + ' = ' + str(fat))
+'''
+
+#33
+'''
+aux = True
+lista = []
+
+while aux:
+    temperatura = int(input('Digite uma temperatura ou 0 para finalizar o programa: '))
+    if temperatura != 0:
+        lista.append(temperatura)
+    else:
+        break
+
+print('Media', sum(lista) / len(lista))
+print('Menor Valor', min(lista))
+print('Maior Valor', max(lista))
+'''
+
+#34
+#idem 21
+
+#35
+'''
+numero = int(input('Informe o numero: '))
+divisores = 0
+contador = 1
+lista = []
+
+while contador <= numero:
+    for divisor in range(1, contador + 1):
+        if contador % divisor == 0:
+            divisores += 1
+
+    if divisores == 2:
+        lista.append(contador)
+    divisores = 0
+    contador += 1
+
+print(lista)
+'''
+#36
+'''
+lista = []
+contador = 0
+
+tabuada = int(input('Informe o numero para montagem da tabuada: '))
+inicio = int(input('Informe inicio do calculo: '))
+fim = int(input('Informe fim do calculo: '))
+
+contador = inicio
+
+if fim < inicio:
+    print('O fim do calculo nao pode ser inferior ao inicio do calculo')
+else:
+    while contador <= fim:
+        lista.append(str(tabuada) + ' X ' + str(contador) + ' = ' + str(tabuada * contador))
+        contador += 1
+
+print('Montar a tabuada de:', tabuada)
+print('Comecar por:', inicio)
+print('Terminar em:', fim)
+print()
+print('Vou montar a tabuada de ' + str(tabuada) + ' começando em ' + str(inicio) + ' e terminando em ' + str(fim) + ' :')
+
+for aux in lista:
+    print(aux)
+'''
+
+#37
+'''
+lista_cliente = []
+lista_altura = []
+lista_peso = []
+
+maior_altura = 0
+pos_maior_altura = 0
+menor_altura = 0
+pos_menor_altura = 0
+maior_peso = 0
+pos_maior_peso = 0
+menor_peso = 0
+pos_menor_peso = 0
+
+while True:
+    codigo = input('Informe o seu codigo ou 0(zero) para encerrar o programa: ')
+    if codigo == '0':
+        break
+    else:
+        altura = float(input('Informe o sua altura: '))
+        peso = float(input('Informe o seu peso: '))
+        lista_cliente.append(codigo)
+        lista_altura.append(altura)
+        lista_peso.append(peso)
+
+maior_altura = max(lista_altura)
+pos_maior_altura = lista_altura.index(maior_altura)
+print('Cliente com maior altura e ' + str(lista_cliente[pos_maior_altura]) + ' com a altura de ' + str(maior_altura))
+
+menor_altura = min(lista_altura)
+pos_menor_altura = lista_altura.index(menor_altura)
+print('Cliente com menor altura e ' + str(lista_cliente[pos_menor_altura]) + ' com a altura de ' + str(menor_altura))
+
+maior_peso = max(lista_peso)
+pos_maior_peso = lista_peso.index(maior_peso)
+print('Cliente com maior peso e ' + str(lista_cliente[pos_maior_peso]) + ' com o peso de ' + str(maior_peso))
+
+menor_peso = min(lista_peso)
+pos_menor_peso = lista_peso.index(menor_peso)
+print('Cliente com menor peso e ' + str(lista_cliente[pos_menor_peso]) + ' com o peso de ' + str(menor_peso))
+
+print('A media das alturas dos clientes e', round(sum(lista_altura) / len(lista_altura), 2))
+print('A media dos pesos dos clientes e', round(sum(lista_peso) / len(lista_peso), 2))
+'''
+
+#38
+'''
+from datetime import datetime
+
+percentual_aumento = 1.5
+salario = 1000
+novo_salario = 1000 + (1000 * (percentual_aumento / 100))
+ano = 1997
+
+now = datetime.now()
+ano_atual = now.year
+
+while ano <= ano_atual:
+    percentual_aumento *= 2
+    novo_salario = novo_salario + (novo_salario * (percentual_aumento / 100))
+    print('Salario em ' + str(ano) + ' e ' + str(round(novo_salario, 2)) + ' aplicado reajuste de ' + str(percentual_aumento) + '%')
+    ano += 1
+
+print()
+print('Salario atual e', round(novo_salario, 2))
+'''
+
+#39
+'''
+aux = 0
+lista_codigo = []
+lista_altura = []
+
+
+while aux < 10:
+    codigo = input('Informe o codigo do aluno: ')
+    altura = float(input('Informe a altura do aluno:'))
+
+    lista_codigo.append(codigo)
+    lista_altura.append(altura)
+
+    aux += 1
+
+maior_altura = max(lista_altura)
+pos_maior_altura = lista_altura.index(maior_altura)
+
+menor_altura = min(lista_altura)
+pos_menor_altura = lista_altura.index(menor_altura)
+
+print('O aluno mais alto e: codigo ' + lista_codigo[pos_maior_altura] + ' altura de ' + str(maior_altura))
+print('O aluno mais baixo e: codigo ' + lista_codigo[pos_menor_altura] + ' altura de ' + str(menor_altura))
+'''
+
+#40
+'''
+estatistica_cod = []
+estatistica_veiculos = []
+estatistica_acidentes = []
+
+cont = 0
+soma = 0
+
+estatistica_cod.append('001')
+estatistica_veiculos.append(1000)
+estatistica_acidentes.append(30)
+
+estatistica_cod.append('002')
+estatistica_veiculos.append(10000)
+estatistica_acidentes.append(120)
+
+estatistica_cod.append('003')
+estatistica_veiculos.append(6600)
+estatistica_acidentes.append(12)
+
+estatistica_cod.append('004')
+estatistica_veiculos.append(300)
+estatistica_acidentes.append(9)
+
+estatistica_cod.append('005')
+estatistica_veiculos.append(200000)
+estatistica_acidentes.append(110)
+
+maior_indice_acidentes = max(estatistica_acidentes)
+pos_maior_indice_acidentes = estatistica_acidentes.index(maior_indice_acidentes)
+
+menor_indice_acidentes = min(estatistica_acidentes)
+pos_menor_indice_acidentes = estatistica_acidentes.index(menor_indice_acidentes)
+
+media_veiculos = sum(estatistica_veiculos) / len(estatistica_veiculos)
+
+for veiculos in estatistica_veiculos:
+    if veiculos < 2000:
+        cont += 1
+        pos_veiculo = estatistica_veiculos.index(veiculos)
+        soma += estatistica_acidentes[pos_veiculo]
+
+print('Maio indice de acidente foi de ' + str(maior_indice_acidentes) + ' acidentes na cidade ' + estatistica_cod[pos_maior_indice_acidentes])
+print('Menor indice de acidente foi de ' + str(menor_indice_acidentes) + ' acidentes na cidade ' + estatistica_cod[pos_menor_indice_acidentes])
+print('Media de veiculos nas 5 cidades', media_veiculos)
+print('Media de acidentes nas cidades com menos de 2000 veiculos', soma / cont)
+'''
+
+#41
