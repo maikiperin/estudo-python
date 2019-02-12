@@ -687,3 +687,4 @@ print('Media de acidentes nas cidades com menos de 2000 veiculos', soma / cont)
 '''
 
 #41
+
