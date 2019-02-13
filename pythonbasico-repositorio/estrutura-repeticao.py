@@ -687,4 +687,61 @@ print('Media de acidentes nas cidades com menos de 2000 veiculos', soma / cont)
 '''
 
 #41
+'''
+divida = float(input('Informe o valor da divida: '))
+lista_parcelas = []
+lista_juros = []
+
+lista_parcelas.append(1)
+lista_juros.append(0)
+
+lista_parcelas.append(3)
+lista_juros.append(10)
+
+lista_parcelas.append(6)
+lista_juros.append(15)
+
+lista_parcelas.append(9)
+lista_juros.append(20)
+
+lista_parcelas.append(12)
+lista_juros.append(25)
+
+print('Valor da Divida\t\tValor dos Juros\t\tQuantidade de Parcelas\t\tValor da Parcela')
+
+for parcela in lista_parcelas:
+    pos_parcela = lista_parcelas.index(parcela)
+    novo_valor = divida + (divida * (lista_juros[pos_parcela] / 100))
+    valor_juros = int(divida * (lista_juros[pos_parcela] / 100))
+    print('R$ {:.2f}'.format(novo_valor) + '\t\t\t' + str(valor_juros) + '\t\t\t\t\t' + str(parcela) + '\t\t\t\t\t\t\tR$ {:.2f}'.format(novo_valor / parcela))
+'''
+
+#42
+'''
+lista_0_25 = []
+lista_26_50 = []
+lista_51_75 = []
+lista_76_100 = []
+
+while True:
+    numero = int(input('Digite um numero positivo, ou um numero negativo para encerrar: '))
+    if numero < 0:
+        break
+    else:
+        if numero >= 0 and numero <= 25:
+            lista_0_25.append(numero)
+        elif numero >= 26 and numero <= 50:
+            lista_26_50.append(numero)
+        elif numero >= 51 and numero <= 75:
+            lista_51_75.append(numero)
+        elif numero >= 76 and numero <= 100:
+            lista_76_100.append(numero)
+
+print('A quantidade de numeros no intervalo [0-25]:', len(lista_0_25))
+print('A quantidade de numeros no intervalo [26-50]:', len(lista_26_50))
+print('A quantidade de numeros no intervalo [51-75]:', len(lista_51_75))
+print('A quantidade de numeros no intervalo [76-100]:', len(lista_76_100))
+'''
+
+
 
