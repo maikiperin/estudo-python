@@ -431,3 +431,32 @@ print('Espaço médio ocupado: ' + str(round(total / len(funcionarios) ,2)) + ' 
 '''
 
 #24
+'''
+from random import *
+def aleatorio():
+    return randrange(0, 100)
+
+cont = 0
+numeros = []
+duplicados = []
+vezes = []
+numero = 0
+
+while cont < 100:
+    numero = aleatorio()
+    numeros.append(numero)
+    cont += 1
+
+numeros.sort(reverse=False)
+
+for dup in numeros:
+    if numeros.count(dup) > 1:
+        if duplicados.count(dup) == 0:
+            duplicados.append(dup)
+            vezes.append(numeros.count(dup))
+
+for aux in duplicados:
+    posaux = duplicados.index(aux)
+    print('O numero ' + str(aux) + ' repetiu ' + str(vezes[posaux]) + ' vezes')
+'''
+
