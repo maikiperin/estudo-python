@@ -137,12 +137,95 @@ print(retorno)
 '''
 
 #10
+'''
+unidades = {1: 'um', 2: 'dois', 3: 'três', 4: 'quatro', 5: 'cinco', 6: 'seis', 7: 'sete', 8: 'oito', 9: 'nove'}
+dezenas = {10: 'dez', 11: 'onze', 12: 'doze', 13: 'treze', 14: 'quartoze', 15: 'quinze', 16: 'dezesseis', 17: 'dezessete', 18: 'dezoito', 19: 'dezenove'}
+demais = {20: 'vinte', 30: 'trinta', 40: 'quarenta', 50: 'cinquenta', 60: 'sessenta', 70: 'setenta', 80: 'oitenta', 90: 'noventa'}
 
+numero = int(input('Informe um número inferior a 99: '))
 
+if numero > 99:
+    print('Número inválido!')
+else:
+    if numero <= 9:
+        print(unidades[numero])
+    else:
+        if numero in dezenas.keys():
+            print(dezenas[numero])
+        else:
+            if numero in demais:
+                print(demais[numero])
+            else:
+                aux = numero / 10
+                dem = int(aux) * 10
+                un = numero - dem
+                print(demais[dem] + ' e ' + unidades[un])
+'''
 
+#11
+'''
+import random
 
+palavaras = ['maiki', 'renata', 'thayna']
+sorteio = random.sample(palavaras, 1)
+palavra = sorteio[0]
+tamanho = len(palavra)
+cont = 0
+cont2 = 0
+mascara = []
+erro = 0
+result = ''
 
+while cont < tamanho:
+    mascara.append('_ ')
+    cont += 1
 
+while True:
+    letra = input('Digite uma letra: ')
+    cont2 = 0
+    if letra in palavra:
+        for aux in palavra:
+            if letra == aux:
+                mascara.pop(cont2)
+                mascara.insert(cont2, letra)
+            cont2 += 1
 
+        result = ''
+        for posicao in mascara:
+            result += posicao
 
+        if '_ ' in result:
+            print('A palavra é: ', result)
+        else:
+            print('A palavra é: ', result)
+            print('Voce acertou a palavra, parabéns!')
+            break
+    else:
+        erro += 1
+        print('-> Você errou pela ' + str(erro) + 'ª vez. Tente de novo!')
+        if erro == 6:
+            print('-> Número máximo de erros alcançado, fim do programa!')
+            break
+'''
 
+#12
+'''
+telefone = input('Informe o número do telefone: ')
+
+aux = telefone.replace('-', '')
+
+print('Valida e corrige número de telefone')
+print('Telefone: ', telefone)
+
+if len(aux) == 7:
+    result = '3' + aux
+    print('Telefone possui 7 dígitos. Vou acrescentar o digito três na frente.')
+    print('Telefone corrigido sem formatação:', result)
+    print('Telefone corrigido com formatação:', result[:4] + '-' + result[4:])
+'''
+
+#13
+#idem 11
+
+#14
+#algorítimo não encontrado
