@@ -165,4 +165,91 @@ class Tami:
 '''
 
 #8
+#idem demais
 
+#9
+'''
+class Ponto:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def impValores(self):
+        print('X = ' + str(self.x) + ' Y = ' + str(self.y))
+
+class Retangulo:
+    def __init__(self, largura, altura):
+        self.largura = largura
+        self.altura = altura
+
+    def centroRetangulo(self):
+        return [self.largura / 2, self.altura / 2]
+'''
+
+#10
+'''
+class bombaCombustivel:
+    def __init__(self, tipoCombustivel, valorLitro, quantidadeCombustivel):
+        self.tipoCombustivel = tipoCombustivel
+        self.valorLitro = valorLitro
+        self.quantidadeCombustivel = quantidadeCombustivel
+
+    def abastecerPorValor(self, valorAbastecimento):
+        self.quantidadeCombustivel += valorAbastecimento / self.valorLitro
+        print('Quantidade abastecida', valorAbastecimento / self.valorLitro)
+
+    def abastecerPorLitro(self, quantAbastecimento):
+        self.quantidadeCombustivel += quantAbastecimento
+        print('O valor a ser pago é', self.valorLitro * quantAbastecimento)
+
+    def alterarValor(self, novoValor):
+        self.valorLitro = novoValor
+
+    def alterarCombustivel(self, novoTipoCombustivel):
+        self.tipoCombustivel = novoTipoCombustivel
+
+    def alterarQuantidadeCombustivel(self, novaQuantidadeCombustivel):
+        self.quantidadeCombustivel = novaQuantidadeCombustivel
+'''
+
+#11
+'''
+class Carro:
+    def __init__(self, consumoKmLitro, quantidadeCombustivel=0):
+        self.consumoKmLitro = consumoKmLitro
+        self.quantidadeCombustivel = quantidadeCombustivel
+
+    def andar(self, distancia):
+        self.quantidadeCombustivel -= distancia / self.consumoKmLitro
+
+    def obterGasolina(self):
+        print(self.quantidadeCombustivel)
+
+    def adicionarGasolina(self, quantidadeLitros):
+        self.quantidadeCombustivel += quantidadeLitros
+'''
+
+#12
+
+class ContaInvestimento:
+    def __init__(self, conta, correntista, saldo=0, taxajuros=0):
+        self.conta = conta
+        self.correntista = correntista
+        self.saldo = saldo
+        self.taxajuros = taxajuros
+
+    def alterarNome(self, novonome):
+        self.correntista = novonome
+        return self.correntista
+
+    def Deposito(self, valor):
+        self.saldo += valor
+
+    def Saque(self, valor):
+        self.saldo -= valor
+
+    def Saldo(self):
+        return self.saldo
+
+    def adicionaJuros(self):
+        self.saldo += self.saldo * (self.taxajuros / 100)

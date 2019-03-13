@@ -71,3 +71,46 @@ meu_Tami = Tami(nome)
 
 print(meu_Tami.retHumor())
 '''
+
+'''
+from classes import Ponto
+from classes import Retangulo
+
+
+meu_retangulo = Retangulo(8, 10)
+
+lista_pontos = meu_retangulo.centroRetangulo()
+
+meu_ponto = Ponto(lista_pontos[0], lista_pontos[1])
+
+meu_ponto.impValores()
+'''
+
+'''
+from classes import Carro
+
+meuFusca = Carro(15)
+meuFusca.adicionarGasolina(20)
+meuFusca.andar(100)
+meuFusca.obterGasolina()
+'''
+
+'''
+from classes import ContaInvestimento
+
+conta = input('Informe sua conta poupança: ')
+correntista = input('Informe seu nome: ')
+
+minha_cp = ContaInvestimento(conta, correntista, 1000, 10)
+
+minha_cp.Deposito(200)
+minha_cp.Saque(50)
+minha_cp.Deposito(10)
+minha_cp.adicionaJuros()
+minha_cp.adicionaJuros()
+minha_cp.adicionaJuros()
+minha_cp.adicionaJuros()
+minha_cp.adicionaJuros()
+
+print('Saldo atual R$ {:.2f}'.format(minha_cp.Saldo()))
+'''
